@@ -7,7 +7,6 @@ module "alb" {
   vpc_id  = module.vpc.vpc_id
   subnets = module.vpc.public_subnets
 
-  # For example only
   enable_deletion_protection = false
 
   # Security Group
@@ -57,8 +56,6 @@ module "alb" {
         unhealthy_threshold = 2
       }
 
-      # Theres nothing to attach here in this definition. Instead,
-      # ECS will attach the IPs of the tasks to this target group
       create_attachment = false
     }
   }

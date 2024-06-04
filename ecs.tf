@@ -17,13 +17,10 @@ module "ecs" {
       }
     }
   }
-
   services = {
-      ecsdemo-frontend = {
-        cpu    = 1024
-        memory = 4096
-
-      # Container definition(s)
+    ecsdemo-frontend = {
+      cpu    = 1024
+      memory = 4096
       container_definitions = {
 
         fluent-bit = {
@@ -71,7 +68,6 @@ module "ecs" {
             }
           ]
 
-          # Example image used requires access to write to root filesystem
           readonly_root_filesystem = false
 
           dependencies = [{
